@@ -60,6 +60,10 @@ button {
     flex: 1 0 20%;
 }
 
+button:hover {
+    background-color: #eaeaea67;
+}
+
 .display-box {
     font-family: 'Orbitron', sans-serif;
     background-color: #dcdbe1;
