@@ -44,6 +44,15 @@ const calculator = {
     addText(value) {
         if (this.displayText === '0') {
             this.displayText = ''
+        } else if (this.prevTotal !== null) {
+            this.displayText = this.prevTotal
+            this.prevTotal = null
         }
-    }
+
+        if (/*user has entered an invalid sequence dont proceed*/) {
+
+        }
+        this.displayText += value
+        // output display to screen
+    },
 }
