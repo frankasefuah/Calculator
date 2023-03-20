@@ -20,9 +20,6 @@ const calculator = {
     displayText: '0',
     prevTotal: null,
     parseInput(value) {
-        if (this.displayText === '0') {
-            this.displayText = ''
-        }
         // have any of the special buttons been clicked
         switch (value) {
             case '=':
@@ -38,8 +35,15 @@ const calculator = {
                     // add the decimal
                 }
                 break
+            default:
+                // add value to text string
+                break
+        }
 
-
+    },
+    addText(value) {
+        if (this.displayText === '0') {
+            this.displayText = ''
         }
     }
 }
