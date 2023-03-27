@@ -32,13 +32,13 @@ const calculator = {
                 break
             case '.':
                 if (this.displayText === 0) {
-                    addText('0.')
+                    this.addText('0.')
                 } else {
-                    addText(value)
+                    this.addText(value)
                 }
                 break
             default:
-                addText(value)
+                this.addText(value)
                 break
         }
 
@@ -57,7 +57,7 @@ const calculator = {
             }
         }
         this.displayText += value
-        outputText(this.displayText)
+        this.outputText(this.displayText)
     },
     outputText(text) {
         document.querySelector('#cal-screen').value = text
