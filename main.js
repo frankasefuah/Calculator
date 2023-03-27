@@ -1,12 +1,12 @@
 //TODO PseudoCode:
-// accept user input
-// should accept decimals
-// store input from user
-// recognise input and perform calculations
-// result
-// C should clear the screen
-// store previous total as start of next operations
-// prevent invalid inputs (operators next to each other , two decimals next to each other)
+// accept user input - done
+// should accept decimals - done
+// store input from user - done
+// recognise input and perform calculations - done
+// result - done
+// C should clear the screen - done
+// store previous total as start of next operations - done
+// prevent invalid inputs (operators next to each other , two decimals next to each other) - done
 
 const keys = document.querySelector('.calculator-btns')
 // Create a var that holds a parent of keys
@@ -25,10 +25,10 @@ const calculator = {
         // have any of the special buttons been clicked
         switch (value) {
             case '=':
-                // calculate the answer
+                this.calcAnswer(this.displayText)
                 break
             case 'C':
-                // clear screen and stored values
+                this.clearAll()
                 break
             case '.':
                 if (this.displayText === 0) {
@@ -61,5 +61,15 @@ const calculator = {
     },
     outputText(text) {
         document.querySelector('#cal-screen').value = text
+    },
+    calcAnswer(equation) {
+        // console.log(eval(equation)) This is the simple way to do it
+        let result = Function('return ' + equation)()
+        this.outputText(result)
+    },
+    clearAll() {
+        this.displayText = '0'
+        this.prevTotal = null
+        this.outputText(this.displayText)
     }
 }
