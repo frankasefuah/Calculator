@@ -12,7 +12,9 @@ const keys = document.querySelector('.calculator-btns')
 // Create a var that holds a parent of keys
 keys.addEventListener('click', event => {
     const target = event.target
+    // const {target} = event 
     const value = target.value
+    // const {value} = target 
     !target.matches('button') ? 0 : calculator.parseInput(value)
 })
 
