@@ -32,13 +32,13 @@ const calculator = {
                 break
             case '.':
                 if (this.displayText === 0) {
-                    // pass 0. into the add text method
+                    addText('0.')
                 } else {
-                    // add the decimal
+                    addText(value)
                 }
                 break
             default:
-                // add value to text string
+                addText(value)
                 break
         }
 
@@ -51,8 +51,10 @@ const calculator = {
             this.prevTotal = null
         }
 
-        if (/*user has entered an invalid sequence dont proceed*/) {
-
+        if (isNaN(+(value)) && isNaN(+(this.displayText))) {
+            if (isNaN(this.displayText.slice(-1))) {
+                return
+            }
         }
         this.displayText += value
         // output display to screen
