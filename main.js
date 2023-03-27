@@ -57,6 +57,9 @@ const calculator = {
             }
         }
         this.displayText += value
-        // output display to screen
+        outputText(this.displayText)
     },
+    outputText(text) {
+        document.querySelector('#cal-screen').value = text
+    }
 }
